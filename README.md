@@ -33,12 +33,6 @@ $ npm executar dev
 # O servidor iniciará na porta: 3333 - acesse <http://localhost:3333>
 ```
 
-- Este BackEnd foi hospedado diretamente no [Render](https://render.com/). 
-
-**Nota 1:** Por estar hospedado em um serviço gratuito, o BackEnd "hiberna" após 15 minutos de inatividade.
-Se o BackEnd não responder de imediato, é só aguardar que ele estará "inicializando" os serviços.
-Essa etapa pode levar até 1 minuto, dependendo da carga nos servidores de renderização.
-
 ## Rotas da API
 Foi utilizado o framework Open Source Insomnia para desenvolvimento e teste da API Rest. A API oferece quatro rotas para realizar as seguintes ações:
 
@@ -47,10 +41,12 @@ Foi utilizado o framework Open Source Insomnia para desenvolvimento e teste da A
 - GET /image/:filename = Retorna a imagem especificada no filename;  
 
 - POST /encode = recebe um application/json com a identificação da imagem ("filename"), gerada após o upload para o servidor, e a mensagem original ("message"). A API deverá aplicar o algoritmo de Esteganografia e retornar um json com a identificação da imagem no novo arquivo gerado.
-**Nota 2:** A imagem encodada parece estar corrompida, pois não consegui abrir e visualizar a imagem.
+
+**Nota 1:** A imagem encodada parece estar corrompida, pois não consegui abrir e visualizar a imagem.
 
 - GET /decode = recebe um application/json com com a identificação da imagem encodada ("filename") e retorna a mensagem escondida na imagem.
-**Nota 3:** No algoritmo de esteganografia foi incluído o binário 00101110 (caractere '.') para evitar que seja percorrida toda a imagem durante a recuperação da mensagem. 
+
+**Nota 2:** No algoritmo de esteganografia foi incluído o binário 00101110 (caractere '.') para evitar que seja percorrida toda a imagem durante a recuperação da mensagem. 
 
 ## Licença
 Este projeto está sob licença
